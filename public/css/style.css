@@ -1,0 +1,183 @@
+/* Layout */
+/** header, nav, container **/
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f0f2f5;
+    color: #333;
+}
+
+/** Navigation Page header text **/
+header {
+    background: #1f2937;
+    color: white;
+    padding: 15px 20px;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Fix: Header remains fixed vertically and laterally */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+    box-sizing: border-box;
+}
+
+nav {
+    background: #374151;
+    display: flex;
+    overflow-x: auto;
+    /* Fix: Nav bar stays at top vertically but scrolls laterally with content */
+    position: sticky;
+    top: 56px; /* Positioned exactly below the fixed header */
+    z-index: 1000;
+    width: max-content; /* Allows it to stretch with content width */
+    min-width: 100%;
+}
+
+/** Navigation header text **/
+nav a {
+    color: white;
+    padding: 12px 18px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+
+nav a:hover {
+    background: #4b5563;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1100px;
+    margin: auto;
+    /* Fix: Add top margin to account for fixed header and sticky nav */
+    margin-top: 110px;
+}
+
+/** button styles**/
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #2563eb;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.btn:hover {
+    background: #1d4ed8;
+}
+
+/** table styling **/
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+}
+
+.table th {
+    background: #e5e7eb;
+    padding: 10px;
+    text-align: left;
+}
+
+.table td {
+    padding: 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.table tr:hover {
+    background: #f9fafb;
+}
+
+/** form styling **/
+form label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 16px;
+    background: #059669;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #047857;
+}
+
+/** responsive grid for seating plan **/
+.seating-grid {
+    display: grid;
+    gap: 10px;
+}
+
+/** Add a reusable card component **/
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/** Fix: specific class for login text to ensure visibility and color match **/
+.login-status {
+    color: white !important;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* Mobile adjustments to prevent overlap */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+    .login-status {
+        margin-top: 4px;
+    }
+    nav {
+        top: 75px; /* Adjust top for taller mobile header */
+    }
+    .container {
+        margin-top: 130px;
+    }
+}
+
+/** make the Student Seats turn a different color (like green) as soon as they are assigned **/
+/* Default styling for the seat box */
+.seat-container {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: all 0.2s ease;
+}
+
+.seat-assigned {
+    background-color: #d4edda !important; /* Green background */
+    border-color: #28a745 !important;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.2);
+}

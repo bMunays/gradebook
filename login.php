@@ -1,0 +1,52 @@
+<?php
+session_start();
+require_once __DIR__ . '/config/db.php';
+
+$error = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+    $stmt->execute([$username]);
+    $user = $stmt->fetch();
+
+    if ($user && password_verify($_POST['password'], $user['password_hash'])) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['role'] = $user['role'];
+        $_SESSION['full_name'] = $user['full_name'];
+
+        header("Location: index.php");
+        exit;
+    } else {
+        $error = "Invalid username or password.";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Gradebook</title>
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+
+<h2>Login</h2>
+
+<?php if ($error): ?>
+    <p style="color:red;"><?= $error ?></p>
+<?php endif; ?>
+
+<form method="POST">
+    <label>Username</label>
+    <input type="text" name="username" required>
+
+    <label>Password</label>
+    <input type="password" name="password" required>
+
+    <button type="submit">Login</button>
+</form>
+
+</body>
+</html>
