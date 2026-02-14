@@ -7,10 +7,11 @@ config/my_private_config.json
 node_modules/
 __pycache__/
 
-# Ignore OS/IDE files
+# Ignore OS (Windows system files)/IDE files
 .vscode/
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # Ignore logs
 *.log
@@ -24,3 +25,5 @@ config/
 # Ignore the hash folder containing sensitive password scripts/hashes
 hash/
 
+# Ignore the uploads folder 
+uploads/
