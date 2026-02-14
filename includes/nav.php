@@ -14,7 +14,7 @@
     <a href="<?php echo BASE_URL; ?>/index.php?page=seating">&#129681; Seating Plan</a>
     <a href="<?php echo BASE_URL; ?>/index.php?page=timetable">&#128338; Timetable</a>
 
-
+    
     <a href="<?php echo BASE_URL; ?>/logout.php" style="margin-left:auto;">Logout</a>
 
 

@@ -31,6 +31,9 @@ $allowed_pages = [
     'students_add',
     'students_edit',
     'students_delete',
+    'student_search',
+    'student_report',
+
 
     // Attendance
     'attendance',
@@ -116,7 +119,7 @@ $allowed_pages = [
     // Timetable
     'timetable',
     'timetable_edit',
-    'timetable_view',                              
+    'timetable_view',
 
 ];
 

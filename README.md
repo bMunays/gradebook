@@ -180,6 +180,9 @@ gradebook/
 │
 ├── index.php               # Main router
 ├── includes/               # Navigation, header, shared components
+    ├── footer.php
+    ├── header.php
+    ├── nav.php
 ├── modules/                # Feature modules (classes, students, assessments, etc.)
 |   ├──
 |   ├──
@@ -187,13 +190,13 @@ gradebook/
 ├── api/
 |   ├── auth.php
 |   ├── get_assessments.php
-|   ├──
-|   ├──
-|   ├──
-|   ├──
-|   ├──
-|   ├──
-|   ├──
+|   ├── get_attendance.php
+|   ├── get_classes.php
+|   ├── get_marks.php
+|   ├── get_students.php
+|   ├── login.php
+|   ├── post_attendance.php
+|   ├── post_marks.php
 ├── assets/                 # CSS, JS, images
 ├── style.css               # Global styling
 ├── README.md               # This file

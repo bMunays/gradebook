@@ -21,6 +21,7 @@ _old/
 
 # Ignore the configuration folder (where my DB credentials live)
 config/
+gradebook.sql
 
 # Ignore the hash folder containing sensitive password scripts/hashes
 hash/
